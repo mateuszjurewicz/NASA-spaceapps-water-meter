@@ -1,6 +1,7 @@
 import requests
 import json
 
+
 def ocr_space_file(filename, overlay=False, api_key='a2b94ede3488957', language='eng'):
     """ OCR.space API request with local file.
         Python3.5 - not tested on 2.7
@@ -52,11 +53,15 @@ def ocr_space_url(url, overlay=False, api_key='a2b94ede3488957', language='eng')
     return r.content.decode()
 
 
-# Use examples:
-test_file = ocr_space_file(filename='How-to-Read-Your-Meter.jpg', language='pol')
-test_url = ocr_space_url(url='http://www.smarthomewaterguide.org/images/water_meter_analog.jpg')
+if __name__ == '__main__':
+    # Working example:
+    # http: // www.smarthomewaterguide.org / images / water_meter_analog.jpg
 
-json1_data = json.loads(test_url)
+    # Use examples:
+    # test_file = ocr_space_file(filename='How-to-Read-Your-Meter.jpg', language='pol')
+    test_url = ocr_space_url(url='http://www.smarthomewaterguide.org/images/water_meter_analog.jpg')
+    # load the string to json
+    json1_data = json.loads(test_url)
 
-# their json structure is weeeeird...
-print(json1_data['ParsedResults'][0]['ParsedText'])
+    # their json structure is weeeeird...
+    print(json1_data['ParsedResults'][0]['ParsedText'])
