@@ -5,6 +5,8 @@
 # Works on this example input:
 # http://www.smarthomewaterguide.org/images/water_meter_analog.jpg
 
+# thanks to use 'Zaargh' for providing baseline
+# https://github.com/Zaargh/ocr.space_code_example/blob/master/ocrspace_example.py
 
 import requests
 import json
